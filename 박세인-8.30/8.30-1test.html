@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function select(sel){
+        document.getElementById(sel).checked=true; 
+    }
+</script>
+<style>
+img{
+    width: 300px;
+    height: 300px;
+}
+</style>
+<body>
+    <h1>설문조사</h1>
+    <form action="#" method="get">
+    <fieldset>
+        <legend>작성자 정보</legend>
+        <ol><label>작성자명</label><input type="text" placeholder="이름을 입력해주세요."> </ol>
+        <ol>
+            <label>안락처</label>
+            <select>
+                <option>010</option>
+                <option>02</option>
+                <option>032</option>
+                <option>070</option>
+            </select>
+            <input type="text" placeholder="가운데 전화번호를 입력해주세요."> 
+            <input type="text" placeholder="뒷자리 전화번호를 입력해주세요."> 
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>설문답변</legend> 
+            <ol> 
+                <li>
+                    <h3>거주지역을 선택하세요.</h3>    
+                    <input type="radio" id="s" name="area" value="서울"><label for="s">서울</label>
+                    <input type="radio" id="k" name="area" value="경기"><label for="k">경기</label>
+                    <input type="radio" id="d" name="area" value="기타"><label for="d">기타</label>
+                </li>
+                <li>
+                 <h3>취미를 모두 고르세요.</h3>
+                 <input type="checkbox" id="b" name="hobby" value="독서"><label for="b">독서</label>
+                 <input type="checkbox" id="t" name="hobby" value="여행"><label for="t">여행</label>
+                 <input type="checkbox" id="c" name="hobby" value="코딩"><label for="c">코딩</label>
+                </li>
+                <li>
+                    <h3>다음 중 횡단보도가 포함된 이미지를 고르세요.</h3> 
+                    <div onclick="select('first');"> 
+                        <img alt="no" src="https://thumb.photo-ac.com/f5/f5d8fda23868c00de1053f49ced7a9e8_t.jpeg">
+                        <input type="radio" id="first" name="g" value="도로">
+                    </div> 
+                    <div onclick="select('second');">
+                        <img alt="no" src="https://cdn.pixabay.com/photo/2018/06/21/13/57/clouds-3488632__340.jpg">
+                        <input type="radio" id="second" name="g" value="하늘">
+                    </div>
+                </li>
+            </ol> 
+        </fieldset>    
+        <button type="submit">보내기</button>
+    </form>
+</body>
+</html>

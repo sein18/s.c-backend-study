@@ -48,9 +48,10 @@ body{
     letter-spacing: -0.8px;
     line-height: calc(var(--base_unit)*2);
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 50px;
     text-transform: uppercase;
-    color: #0068FF;
+    color: #006400;
+    margin-left: 120px;
 }
 .content_tt{
     font-weight: 300;
