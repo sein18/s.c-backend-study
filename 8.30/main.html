@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>회원가입</title>
 </head>
 <script>
     function login(){
@@ -54,18 +54,26 @@ body{
 
 </style>
 <body>
-    <div id="header">
-        <h1><a></a></h1> 
-        <div id="first">
-            <form action="" method="post">
-                <label>아이디:</label>        
-                <input type="text" ><br>
-                <label>비밀번호:</label>
-                <input type="text" ><br><br>
-                <input type="button" value="로그인" onclick="login();">
-                <input type="button" value="회원가입"onclick="ri();" >
-            </form>
-        </div>
+    <h1>회원가입</h1>
+    <fieldset>
+        <legend>필수 입력 사항</legend>
+        <div id="header">
+            <h1><a></a></h1> 
+            <div id="first">
+                <form action="" method="post">
+                    <label>이름:</label>        
+                    <input type="text" ><br>
+                    <label>이메일:</label>
+                    <input type="text" ><br>
+                    <label>비밀번호:</label>        
+                    <input type="password" ><br>
+                    <label>비밀번호 확인:</label>
+                    <input type="password" ><br><br>
+                    <input type="button" value="로그인" onclick="login();">
+                    <input type="button" value="회원가입"onclick="ri();" >
+                </form>
+            </div>
+        </fieldset>
         <div id="second">
 
         </div>
