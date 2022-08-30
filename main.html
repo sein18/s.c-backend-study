@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function login(){
+        let a = document.getElementById("second");
+        console.log(a);
+        alert("로그인을 실행했습니다.");
+        a.innerText="로그인";
+    }
+    function ri(){
+        let a = document.getElementById("second");
+        console.log(a);
+        alert("회원가입을 실행했습니다.");
+        a.innerText="회원가입";
+        
+    }
+    
+</script>
+<style>
+#first{
+    height: 130px;
+    width: 300px;
+    border: 1px solid blue;
+    text-align: center; 
+    display: block;
+    margin:0 auto;
+} 
+#second{
+    text-align: center; 
+    display: block;
+    margin:0 auto;
+}
+body{
+    background-color: aliceblue;
+}
+#header{
+    margin: 0 auto;
+    position: relative;
+    padding: 106px 0 53px;
+    width: 768px;
+}h1 a{
+   width:231px;
+   height:44px;
+   background-image:url(https://static.nid.naver.com/images/ui/login/pc_sp_login_190522.png);
+   display: block;
+   margin:0 auto;
+} 
+
+</style>
+<body>
+    <div id="header">
+        <h1><a></a></h1> 
+        <div id="first">
+            <form action="" method="post">
+                <label>아이디:</label>        
+                <input type="text" ><br>
+                <label>비밀번호:</label>
+                <input type="text" ><br><br>
+                <input type="button" value="로그인" onclick="login();">
+                <input type="button" value="회원가입"onclick="ri();" >
+            </form>
+        </div>
+        <div id="second">
+
+        </div>
+    </div>
+    
+</body>     
+</html>

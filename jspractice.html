@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+<script>
+    window.onload = function(){
+        let a = document.getElementsByClassName("c")[1];
+        console.log(a);
+        console.log(a.parentElement.lastChild);
+        let b = document.querySelectorAll("#a>.b")[2];
+        console.log(b);
+    }
+</script>
+</head>
+<body>
+    <div id="a">a
+        <div class="b">b
+            <div class="c">c</div>
+        </div>
+        <div class="b">bb
+            <div class="c">cc</div>
+        </div>
+        <div class="b">bbb</div>
+
+    </div>
+</body>
+</html>
