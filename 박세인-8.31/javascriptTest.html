@@ -7,25 +7,48 @@
     <title>Document</title>
 </head>
 <script>
-    let admin;
-    let name = "John";
-    admin = name;
-    alert(`hi ${admin}`);
-    let rename = prompt("사용자의 이름은?");
-    alert(`사용자는 ${rename} 입니다.`);
+    // let admin;
+    // let name = "John";
+    // admin = name;
+    // alert(`hi ${admin}`);
+    // let rename = prompt("사용자의 이름은?");
+    // alert(`사용자는 ${rename} 입니다.`);
 
-    let n1 ="3";
-    let n2 ="2";
-    alert(n1-n2);
+    // let n1 ="3";
+    // let n2 ="2";
+    // alert(n1-n2);
     
-    let a = Number(prompt("덧셈할 첫 번째 숫자를 입력해주세요.",1));
-    let b = Number(prompt("덧셈할 두 번째 숫자를 입력해주세요.",2));
-    alert(a+b);
+    // let a = Number(prompt("덧셈할 첫 번째 숫자를 입력해주세요.",1));
+    // let b = Number(prompt("덧셈할 두 번째 숫자를 입력해주세요.",2));
+    // alert(a+b);
+    
+    let jsname = prompt("자바스크립트의 '공식'이름은 무엇일까요?");
+    if(jsname=="ECMAScript"){
+        alert("정답입니다.");
+    }else{
+        alert("모르셨나요? 정답은 ECMAScript입니다!");
+    }
+
+    let sname="";
+    for(let i=2;i<=10;i++){
+        if(i%2==0){
+            sname+=i+" ";
+        }
+    }
+    alert(sname);
+
 </script>
 <style>
+/* ul{
 
+} */
 </style>
 <body>
-
+ <!-- <ul>
+    <li>메뉴</li>
+    <li>마이페이지</li>
+    <li>등등</li>
+    <li>등등</li>
+ </ul> -->
 </body>
 </html>
