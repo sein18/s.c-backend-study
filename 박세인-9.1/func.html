@@ -6,20 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #a{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        border: 1px solid red;
+        line-height: 50px;
+    }
+</style>
+<body>
+    <form id="form">
+        <div class="field">
+            <label for="email">이메일</label>
+            <input type="text" id="email" name="email" placeholder="이메일">
+            <span class="icon"></span>
+            <small>이메일 형식이 아닙니다.</small>
+        </div>
+    </form>
+
+    <div id="a">
+        <p>
+
+        하이
+        </p>
+    </div>
+</body>
 <script>
 
-    let a = 1;
-    function a1(){
-        let b = 2;
-        function b1(){
-            let c = 3;
-            return a + b + c;
+    document.getElementById('email').addEventListener('blur', function(event) {
+        /*
+            (실습문제 1) 이메일 유효성검사 작성
+              - 이메일 유효성검사 정규식 : /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                * 다른 이메일 정규식을 검색해서 사용해도 됨
+                * 다른 유효성검사 항목 참고하여 작성 (이름, 비밀번호 등)
 
-        }
-    }
-    console.log(a1(),a);
+        */
+        const value = this.value,
+              elParent = this.parentElement,
+              parentClassList = elParent.classList;
+
+              console.log(parentClassList);
+              parentClassList.add('error');
+              console.log(parentClassList);
+    });
 </script>
-<body>
-    
-</body>
 </html>
