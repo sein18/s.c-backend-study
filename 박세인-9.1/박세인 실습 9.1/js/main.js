@@ -69,6 +69,7 @@
 
     /* 비밀번호확인 */
     document.getElementById('pwdConfirm').addEventListener('blur', function(event) {
+
         const value = this.value,
               pwdValue = document.getElementById('pwd').value,
               elParent = this.parentElement,
@@ -96,16 +97,26 @@
              (실습문제 2) form 전송 시 각 항목 입력값 확인
               # 이름, 이메일, 비밀번호, 개인정보수집동의 필수 입력 값
          */
-        let ck = document.getElementsByClassName('field success');
-        let boxck = document.getElementsByClassName('checkbox_item');
+        const ck = [document.getElementById('username'),document.getElementById('email'),document.getElementById('pwd'),document.getElementById('privacy')]
+        console.log(ck);
+        ck.forEach(function(item){
+            if(!item.value || (item.type === 'checkbox' && !item.checked)) {
+                alert(`${document.querySelector(`label[for="${item.id}"]`).innerText}가(이) 입력되지 않았습니다.`);
 
-        if(ck.length == 4 && boxck[0].checked==true && boxck[1].checked==true){
-            alert("success!!전송");
-        }
-        else{
-            alert(" 이름, 이메일, 비밀번호, 개인정보수집동의 필수 입력 "+ ck.length); 
-            event.preventDefault();
-        }
+                event.preventDefault();
+
+            }
+        });
+        // let ck = document.getElementsByClassName('field success');
+        // let boxck = document.getElementsByClassName('checkbox_item');
+
+        // if(ck.length == 4 && boxck[0].checked==true && boxck[1].checked==true){
+        //     alert("success!!전송");
+        // }
+        // else{
+        //     alert(" 이름, 이메일, 비밀번호, 개인정보수집동의 필수 입력 "+ ck.length); 
+        //     event.preventDefault();
+        // }
  
      });
     
