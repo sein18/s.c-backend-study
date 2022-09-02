@@ -135,7 +135,7 @@
             
             // console.log(username,email,pwd,userAddr,gender,privacy,marketing);
 
-            arr.push({'index':num++,'username':username,'email':email,'pwd':pwd,'userAddr':userAddr,'gender':gender,'privacy':privacy,'marketing':marketing});
+            arr.push({'index':++num,'username':username,'email':email,'pwd':pwd,'userAddr':userAddr,'gender':gender,'privacy':privacy,'marketing':marketing});
              
 
             //배열 string으로 변환
