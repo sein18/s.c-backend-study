@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     var arr = [];
-    let num = 0;
+    var num = 0;
 
     /** Validation Check Start **/
     /* 이름 */
@@ -98,20 +98,28 @@
              (실습문제 2) form 전송 시 각 항목 입력값 확인
               # 이름, 이메일, 비밀번호, 개인정보수집동의 필수 입력 값
          */
+        //필수 값이 없으면 0 있으면 1 
         let yesno = 1;
+        
         const ck = [document.getElementById('username'),document.getElementById('email'),document.getElementById('pwd'),document.getElementById('privacy')]
-        console.log(ck);
+        
         ck.forEach(function(item){
             if(!item.value || (item.type === 'checkbox' && !item.checked)) {
                 alert(`${document.querySelector(`label[for="${item.id}"]`).innerText}가(이) 입력되지 않았습니다.`);
-
                 event.preventDefault();
                 yesno = 0;
             }
-        }); 
-        if(yesno==1){
-            //JSON.parse
-            event.preventDefault();
+        });
+
+        if(yesno == 1){
+            let Jarr = JSON.parse(localStorage.getItem('arr'));
+            //로컬 스토리즈가 클리어 상태이면 x
+            if(Jarr){
+                arr = Jarr;
+                num = Jarr[Jarr.length-1].index;
+            }
+            console.log(typeof(Jarr[Jarr.length-1].index));
+
             const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
             const pwd = document.getElementById('pwd').value;
@@ -124,26 +132,93 @@
             }
             const privacy = document.getElementById('privacy').checked;
             const marketing = document.getElementById('marketing').checked;
-            console.log(username,email,pwd,userAddr,gender,privacy,marketing);
+            
+            // console.log(username,email,pwd,userAddr,gender,privacy,marketing);
 
             arr.push({'index':num++,'username':username,'email':email,'pwd':pwd,'userAddr':userAddr,'gender':gender,'privacy':privacy,'marketing':marketing});
-                
-            const trElem = document.createElement('tr');
-            trElem.innerHTML+=`<td><input type="checkbox" class="check" value="${arr[arr.length-1].index}"></td>`;
-            trElem.innerHTML+=` <td>${arr[arr.length-1].username}</td>`;
-            trElem.innerHTML+=` <td>${arr[arr.length-1].email}</td>`;
-            trElem.innerHTML+=` <td>${arr[arr.length-1].pwd}</td>`;
-            trElem.innerHTML+=` <td>${arr[arr.length-1].userAddr}</td>`;
-            trElem.innerHTML+=` <td>${arr[arr.length-1].gender}</td>`;
-            trElem.innerHTML+=` <td>${arr[arr.length-1].privacy}</td>`;
-            trElem.innerHTML+=` <td>${arr[arr.length-1].marketing}</td>`;
-            let insert = document.querySelector('tbody');
-            insert.appendChild(trElem);
+             
+
+            //배열 string으로 변환
+            let strarr = JSON.stringify(arr); 
+            //  console.log(strarr);
             
+            //로컬스토리즈 클리어(오류값 제거)
             localStorage.clear();
-            localStorage.setItem('arr',arr);
+            //로컬스토리즈에 등록
+            localStorage.setItem('arr', strarr);
+             
         }
         
     });
+
+    window.onload = function lod(){ 
+        // localStorage.clear();
+        
+        let Jarr = JSON.parse(localStorage.getItem('arr'));
+        if(Jarr){
+            for(let i =0;i<Jarr.length;i++){
+                const trElem = document.createElement('tr');
+                trElem.innerHTML+=`<td><input type="checkbox" class="check" onclick="selectCheckBox();" value="${Jarr[i].index}"></td>`;
+                trElem.innerHTML+=` <td>${Jarr[i].username}</td>`;
+                trElem.innerHTML+=` <td>${Jarr[i].email}</td>`;
+                trElem.innerHTML+=` <td>${Jarr[i].pwd}</td>`;
+                trElem.innerHTML+=` <td>${Jarr[i].userAddr}</td>`;
+                trElem.innerHTML+=` <td>${Jarr[i].gender}</td>`;
+                trElem.innerHTML+=` <td>${Jarr[i].privacy}</td>`;
+                trElem.innerHTML+=` <td>${Jarr[i].marketing}</td>`;
+                let insert = document.querySelector('tbody');
+                insert.appendChild(trElem);
+            }
+        }else{
+            console.log("오류");
+        }
+    };
     
+    //전체 체크 클릭
+    document.getElementById('check_all').addEventListener('click',function(event){
+        let cks = document.getElementsByClassName('check');
+        if(document.getElementById('check_all').checked){
+            for(let i =0;i<cks.length;i++){
+                cks[i].checked=true;
+            }
+        }else{
+            for(let i =0;i<cks.length;i++){
+                cks[i].checked=false;
+            }
+        }
+    });
+
+    //삭제 event
+    document.getElementById('delete').addEventListener('click',function(event){
+        const getcks = document.getElementsByClassName('check');
+        let Jarr = JSON.parse(localStorage.getItem('arr'));
+
+        for(let i = 0;i<getcks.length;i++){
+            if(getcks[i].checked==true){
+                for(let j=0;j<Jarr.length;j++){
+                    if(getcks[i].value==Jarr[j].index){
+                        console.log("11");
+                        break;
+                    }
+                }
+                getcks[i].parentElement.parentElement.remove();
+            }
+        }
+    });
+
 })();
+
+
+   //부분 체크 클릭
+   function selectCheckBox(){
+    let selCk = document.getElementsByClassName('check');
+    for(let i = 0;i<selCk.length;i++){
+        // 하나라도 체크 x 전체 체크 풀기
+        if(!selCk[i].checked){
+            document.getElementById('check_all').checked=false;
+            return;
+        }
+    }
+    //전체 체크 클릭(모두 체크 돼서)
+    document.getElementById('check_all').checked=true;
+}
