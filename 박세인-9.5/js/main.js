@@ -12,7 +12,7 @@
             if(!/^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/g.test(value)) {
                 parentClassList.add('error');
                 parentClassList.remove('success');
-            }else{
+            }else{ 
                 parentClassList.add('success');
                 parentClassList.remove('error');
             }
@@ -174,9 +174,11 @@
         const getcks = document.querySelectorAll(`input[class="check"]`);
         let Jarr = JSON.parse(localStorage.getItem('arr'));
 
-        for(let i = 0;i<getcks.length;i++){
+        //배열 순번이 꼬이지 않도록 뒤에서 삭제
+        for(let i = getcks.length-1;i>= 0;i--){
             if(getcks[i].checked==true){
                 Jarr.splice(i,1); 
+                console.log(Jarr);
                 localStorage.setItem('arr', JSON.stringify(Jarr));
                 getcks[i].parentElement.parentElement.remove();
             }
@@ -188,6 +190,7 @@
    //부분 체크 클릭
    function selectCheckBox(){
     let selCk = document.querySelectorAll(`input[class="check"]:checked`).length == document.querySelectorAll(`input[class="check"]`).length;
-    selCk? document.getElementById('check_all').checked=true:document.getElementById('check_all').checked=false;
+    let docchk= document.getElementById('check_all').checked;
+    selCk ? docchk = true : docchk = false;
     
 }
