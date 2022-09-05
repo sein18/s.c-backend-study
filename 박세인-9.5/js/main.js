@@ -188,9 +188,7 @@
 })();
 
    //부분 체크 클릭
-   function selectCheckBox(){
-    let selCk = document.querySelectorAll(`input[class="check"]:checked`).length == document.querySelectorAll(`input[class="check"]`).length;
-    let docchk= document.getElementById('check_all').checked;
-    selCk ? docchk = true : docchk = false;
+   function selectCheckBox(){ 
+    document.getElementById('check_all').checked = document.querySelectorAll(`input[class="check"]:checked`).length == document.querySelectorAll(`input[class="check"]`).length;
     
 }
