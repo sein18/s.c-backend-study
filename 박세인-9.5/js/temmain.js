@@ -142,9 +142,12 @@
             for(let i =0;i<Jarr.length;i++){
                 // 기존 HTML tbody 와 템플릿 열로 테이블을 인스턴스화합니다
                 let t = document.querySelector('#user_template');
-                // 새로운 열을 복제하고 테이블에 삽입합니다
+                // console.log(t.content);
+                // console.log(t);
+                // 템플릿을 복사 (true 자식을 가져오고, false자식을 안 가져옴)
                 var clone = document.importNode(t.content, true);
                 let td = clone.querySelectorAll("td");
+                // console.log(td);
                 
                 td[1].innerText = Jarr[i].username;
                 td[2].innerText = Jarr[i].email;
