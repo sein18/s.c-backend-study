@@ -19,7 +19,7 @@
             parentClassList.remove('success', 'error');
         }
     });
-
+ 
     /* 이메일 */
     $('#email').blur(function() {
         /*
