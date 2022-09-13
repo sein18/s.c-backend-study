@@ -96,7 +96,7 @@
                 parentClassList.remove('error');
             }
         }else{
-            parentClassList.remove('success', 'error');
+            parentClassList.add('error');
         }
     });
     
@@ -115,7 +115,7 @@
                 parentClassList.remove('error');
             }
         }else{
-            parentClassList.remove('success', 'error');
+            parentClassList.add('error');
         }
     });
 
@@ -156,56 +156,38 @@
         // 배송지 shipaddr,수령인 username, 연락처 uphonefirst,uphonemid,uphonelast
         // 주소 postcode road detail 기본 배송지 defaultYn 배송정보 수집 privacyYn
         event.preventDefault();
-        const shipaddr = document.getElementById('shipaddr').value;
-        const username = document.getElementById('username').value;
-        const uphonefirst = document.getElementById('uphonefirst').value;
-        const uphonemid = document.getElementById('uphonemid').value;
-        const uphonelast = document.getElementById('uphonelast').value;
-        const postcode = document.getElementById('postcode').value;
-        const road = document.getElementById('road').value;
-        const detail = document.getElementById('detail').value;
-        const defaultYn = document.getElementById('defaultYn').checked? 'Y' : 'N';
-        const privacyYn = document.getElementById('privacyYn').checked? 'Y' : 'N';
-
+        updateuser.shipaddr = document.getElementById('shipaddr').value;
+        updateuser.username = document.getElementById('username').value;
+        updateuser.uphonefirst = document.getElementById('uphonefirst').value;
+        updateuser.uphonemid = document.getElementById('uphonemid').value;
+        updateuser.uphonelast = document.getElementById('uphonelast').value;
+        updateuser.postcode = document.getElementById('postcode').value;
+        updateuser.road = document.getElementById('road').value;
+        updateuser.detail = document.getElementById('detail').value;
+          
         let err = document.getElementsByClassName('field error');
         
-        console.log(shipaddr+" "+username+" "+uphonefirst+" "+uphonemid+" "+uphonelast+" "+postcode
-        +" "+road+" "+detail+" "+defaultYn+" "+privacyYn);
-        if(err.length||!shipaddr||!username||!uphonefirst||!uphonemid||!uphonelast||!postcode||!road||!detail||privacyYn=='N'){
+         
+        if(err.length||!updateuser.shipaddr||!updateuser.username||!updateuser.uphonefirst||!updateuser.uphonemid
+            ||!updateuser.uphonelast||!updateuser.postcode||!updateuser.road||!updateuser.detail){
             event.preventDefault();
             alert("정보를 알맞게 입력하세요.");
             return;
         }
 
-        console.log(shipaddr+" "+username+" "+uphonefirst+" "+uphonemid+" "+uphonelast+" "+postcode
-        +" "+road+" "+detail+" "+defaultYn+" "+privacyYn);
-
-        const ck = {shipaddr:shipaddr,
-            username:username,
-            uphone:`${uphonefirst}-${uphonemid}-${uphonelast}`,
-            post:`(${postcode}) ${road} ${detail}`,
-            defaultYn:defaultYn,
-            privacyYn:privacyYn
-        }
-        let arr = [];
-
-        if(!localStorage.getItem('arr')){
-            arr.push(ck);
-            localStorage.setItem('arr',JSON.stringify(arr));
-        }else{
-            arr = JSON.parse(localStorage.getItem('arr'));
-            arr.push(ck);
-            localStorage.setItem('arr',JSON.stringify(arr));
-            console.log(arr);
-        }
-
-        console.log(ck);
-    //     const ck = [document.getElementById('postcode'),
-    //     document.getElementById('username'),
-    //     document.getElementById('uphonefirst')+"-"+document.getElementById('uphonemid')+"-"+document.getElementById('uphonelast'),
-    //     "("+document.getElementById('postcode')+") "+document.getElementById('road')+" "+document.getElementById('detail'),
-    // ]
-
+        arr[idxnum].shipaddr = updateuser.shipaddr;
+        arr[idxnum].username = updateuser.username;
+        arr[idxnum].uphonefirst = updateuser.uphonefirst;
+        arr[idxnum].uphonemid = updateuser.uphonemid;
+        arr[idxnum].uphonelast = updateuser.uphonelast;
+        arr[idxnum].postcode = updateuser.postcode;
+        arr[idxnum].road = updateuser.road;
+        arr[idxnum].detail = updateuser.detail;
+       
+        console.log(arr[idxnum]);
+        console.log(arr);
+        localStorage.setItem('arr',JSON.stringify(arr));
+        location.href='list.html';
     });
 })();
  

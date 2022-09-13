@@ -19,7 +19,7 @@
             td[1].innerText = arr[i].shipaddr;
             td[2].innerText = arr[i].username;
             td[3].innerText = arr[i].uphonefirst+'-'+arr[i].uphonemid+'-'+arr[i].uphonelast;
-            td[4].innerText = '('+arr[i].postcode+') '+arr[i].detail+' '+arr[i].road;
+            td[4].innerText = '('+arr[i].postcode+') '+arr[i].road+' '+arr[i].detail;
             td[5].innerText = arr[i].defaultYn;
             td[6].innerText = arr[i].privacyYn;
             td[7].querySelector('button').setAttribute('data-index',arr[i].index);
