@@ -1,7 +1,31 @@
    
 (function() {
     'use strict';
- 
+    console.log(localStorage.getItem('useridx'));
+    let useridx = Number(localStorage.getItem('useridx'));
+
+    let arr = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')):[];
+    let updateuser;
+    let idxnum;
+
+    for(let i=0;i<arr.length;i++){
+        if(useridx===arr[i].index){
+            updateuser=arr[i];
+            idxnum=i;
+        }
+    }
+
+    document.getElementById('shipaddr').value = updateuser.shipaddr;
+    document.getElementById('username').value = updateuser.username;
+    document.getElementById('uphonefirst').value = updateuser.uphonefirst;
+    document.getElementById('uphonemid').value = updateuser.uphonemid;
+    document.getElementById('uphonelast').value = updateuser.uphonelast;
+    document.getElementById('postcode').value = updateuser.postcode;
+    document.getElementById('road').value = updateuser.road;
+    document.getElementById('detail').value = updateuser.detail;
+
+
+    console.log(updateuser);
     // 배송지명
     document.getElementById('shipaddr').addEventListener('blur', function(event) {
         const value = this.value,

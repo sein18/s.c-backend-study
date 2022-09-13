@@ -18,11 +18,11 @@
             
             td[1].innerText = arr[i].shipaddr;
             td[2].innerText = arr[i].username;
-            td[3].innerText = arr[i].uphone;
-            td[4].innerText = arr[i].post;
+            td[3].innerText = arr[i].uphonefirst+'-'+arr[i].uphonemid+'-'+arr[i].uphonelast;
+            td[4].innerText = '('+arr[i].postcode+') '+arr[i].detail+' '+arr[i].road;
             td[5].innerText = arr[i].defaultYn;
             td[6].innerText = arr[i].privacyYn;
-
+            td[7].querySelector('button').setAttribute('data-index',arr[i].index);
             let tb = document.querySelector("tbody"); 
             tb.appendChild(clone);
         }
@@ -52,9 +52,17 @@
             }
         }
     });
-
+    
+    document.querySelectorAll('.updt').forEach(function(event){
+       console.log(event.target);
+    });
 })();
-
 function selectCheckBox(){ 
     document.getElementById('cbx_chkAll').checked = document.querySelectorAll(`input[class="check"]:checked`).length == document.querySelectorAll(`input[class="check"]`).length;
 }
+function updateCheckBox(e){
+   console.log(e.getAttribute('data-index'));
+   localStorage.setItem('useridx',e.getAttribute('data-index'));
+   location.href='update.html?';
+}
+ 

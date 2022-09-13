@@ -1,7 +1,7 @@
    
 (function() {
     'use strict';
- 
+    let num=0;
     // 배송지명
     document.getElementById('shipaddr').addEventListener('blur', function(event) {
         const value = this.value,
@@ -147,6 +147,7 @@
         
         console.log(shipaddr+" "+username+" "+uphonefirst+" "+uphonemid+" "+uphonelast+" "+postcode
         +" "+road+" "+detail+" "+defaultYn+" "+privacyYn);
+
         if(err.length||!shipaddr||!username||!uphonefirst||!uphonemid||!uphonelast||!postcode||!road||!detail||privacyYn=='N'){
             event.preventDefault();
             alert("정보를 알맞게 입력하세요.");
@@ -156,24 +157,30 @@
         console.log(shipaddr+" "+username+" "+uphonefirst+" "+uphonemid+" "+uphonelast+" "+postcode
         +" "+road+" "+detail+" "+defaultYn+" "+privacyYn);
 
-        const ck = {shipaddr:shipaddr,
+       
+        let arr = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')):[];
+        
+        if(arr.length){
+            num = arr[arr.length-1].index;
+        }
+        console.log(num);
+        
+        const ck = {index:++num,
+            shipaddr:shipaddr,
             username:username,
-            uphone:`${uphonefirst}-${uphonemid}-${uphonelast}`,
-            post:`(${postcode}) ${road} ${detail}`,
+            uphonefirst:uphonefirst,
+            uphonemid:uphonemid,
+            uphonelast:uphonelast,
+            postcode:postcode,
+            road:road,
+            detail:detail,
             defaultYn:defaultYn,
             privacyYn:privacyYn
         }
-        let arr = [];
+        arr.push(ck);
+        localStorage.setItem('arr',JSON.stringify(arr));
+        console.log(arr);
 
-        if(!localStorage.getItem('arr')){
-            arr.push(ck);
-            localStorage.setItem('arr',JSON.stringify(arr));
-        }else{
-            arr = JSON.parse(localStorage.getItem('arr'));
-            arr.push(ck);
-            localStorage.setItem('arr',JSON.stringify(arr));
-            console.log(arr);
-        }
 
         console.log(ck);
     //     const ck = [document.getElementById('postcode'),
