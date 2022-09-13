@@ -11,7 +11,8 @@
     />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/sign.css" />
-    <script src="js/script.js" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="js/updatescript.js" defer></script>
   </head>
   <body>
     <main>
@@ -31,7 +32,7 @@
                 autofocus
               />
               <span class="icon"></span>
-              <small>Error Message</small>
+              <small>배송지 입력(20자 이내)</small>
             </div>
             <h4 class="sub_tit">받으시는 분</h4>
             <div class="field">
@@ -44,7 +45,7 @@
                 autofocus
               />
               <span class="icon"></span>
-              <small>Error Message</small>
+              <small>받으시는 분 입력(10자 이내)</small>
             </div>
           </fieldset>
           <fieldset>
@@ -62,21 +63,25 @@
               </div>
               <div class="field">
                 <input
-                  type="number"
+                  type="text"
                   name="user_phone_mid"
-                  id="uphonemid"
-                  min="0"
-                  max="9999"
+                  id="uphonemid" 
+                  maxlength="4"
+                 disabled
                 />
+                <span class="icon"></span>
+              <small>번호 4자리 입력</small>
               </div>
               <div class="field">
                 <input
-                  type="number"
+                  type="text"
                   name="user_phone_last"
                   id="uphonelast"
-                  min="0"
-                  max="9999"
+                  maxlength="4"
+                  disabled
                 />
+                <span class="icon"></span>
+              <small>번호 4자리 입력</small>
               </div>
             </div>
 
