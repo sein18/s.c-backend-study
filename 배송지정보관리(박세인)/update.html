@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>배송지 등록</title>
+    <title>배송지 수정</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
@@ -12,16 +12,15 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/sign.css" />
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="js/registscript.js" defer></script>
+    <script src="js/updatescript.js" defer></script>
   </head>
   <body>
     <main>
       <section class="banner cont_p">
-        <h2 class="banner_tt">배송지 등록</h2>
-        <form id="form" action="list.html" method="get">
-          <!-- post-> get -->
+        <h2 class="banner_tt">배송지 수정</h2>
+        <form id="form" action="#" method="post">
           <fieldset>
-            <legend>배송지 등록</legend>
+            <legend>배송지 수정</legend>
             <h4 class="sub_tit">배송지명</h4>
             <div class="field">
               <label for="shipaddr">배송지명</label>
@@ -33,7 +32,7 @@
                 autofocus
               />
               <span class="icon"></span>
-              <small>배송지 입력</small>
+              <small>배송지 입력(20자 이내,'<','>'금지)</small>
             </div>
             <h4 class="sub_tit">받으시는 분</h4>
             <div class="field">
@@ -46,7 +45,7 @@
                 autofocus
               />
               <span class="icon"></span>
-              <small>받으시는 분 입력</small>
+              <small>받으시는 분 입력(10자 이내,'<','>'금지)</small>
             </div>
           </fieldset>
           <fieldset>
@@ -66,10 +65,9 @@
                 <input
                   type="text"
                   name="user_phone_mid"
-                  id="uphonemid"
+                  id="uphonemid" 
                   maxlength="4"
-                 disabled
-                  />
+                />
                 <span class="icon"></span>
               <small>번호 4자리 입력</small>
               </div>
@@ -79,7 +77,6 @@
                   name="user_phone_last"
                   id="uphonelast"
                   maxlength="4"
-                  disabled
                 />
                 <span class="icon"></span>
               <small>번호 4자리 입력</small>
@@ -121,7 +118,7 @@
                 placeholder="상세주소"
               />
               <span class="icon"></span>
-              <small>상세주소 입력</small>
+              <small>상세주소 입력 필수('<','>'금지)</small>
             </div>
             <h4 class="sub_tit">특이사항</h4>
             <div class="field info">
@@ -133,25 +130,11 @@
                 placeholder="배송지 관련 특이사항을 입력해주세요."
               ></textarea>
             </div>
-            <div class="consent">
-              <div>
-                <div>
-                  <input type="checkbox" id="defaultYn" class="checkbox_item" />
-                  <label for="defaultYn"><h5>기본 배송지로 설정</h5></label>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <input type="checkbox" id="privacyYn" class="checkbox_item" />
-                  <label for="privacyYn"><h5>배송정보수집 이용 동의</h5></label>
-                </div>
-              </div>
-            </div>
           </fieldset>
           <hr />
 
           <div>
-            <button type="submit" class="button">등록</button>
+            <button type="submit" class="button">수정</button>
           </div>
         </form>
       </section>

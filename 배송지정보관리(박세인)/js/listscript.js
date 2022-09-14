@@ -22,13 +22,6 @@
         tb.appendChild(clone);
     } 
 
-    //전체 체크 클릭
-    document.getElementById('cbx_chkAll').addEventListener('click',function(event){
-        document.querySelectorAll('input[type="checkbox"]').forEach((el) => {
-            el.checked = event.target.checked;
-        });
-    });
-
     //삭제 event
     document.getElementById('delete').addEventListener('click',function(event){
         const getcks = document.querySelectorAll(`input[class="check"]`);
@@ -48,6 +41,13 @@
     //배송지 등록 페이지로 이동
     document.getElementById('insert').addEventListener('click',function(){
         location.href='regist.html';
+    });
+
+    //전체 체크 클릭
+    document.getElementById('cbx_chkAll').addEventListener('click',function(event){
+        document.querySelectorAll('input[type="checkbox"]').forEach((el) => {
+            el.checked = event.target.checked;
+        });
     });
 
 })();
