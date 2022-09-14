@@ -1,8 +1,10 @@
    
 (function() {
     'use strict';
+    //index값 선언
     let num=0;
-    // 배송지명
+
+    // 배송지명 css
     document.getElementById('shipaddr').addEventListener('blur', function(event) {
         const value = this.value,
               elParent = this.parentElement,
@@ -21,7 +23,7 @@
         }
     });
     
-    // 받으시는 분
+    // 받으시는 분 css
     document.getElementById('username').addEventListener('blur', function(event) {
         const value = this.value,
               elParent = this.parentElement,
@@ -39,7 +41,7 @@
             parentClassList.remove('success', 'error');
         }
     });
-    //번호 text on//off
+    //번호 text on//off 
     document.getElementById('uphonefirst').addEventListener('change', function(){
 
         if(this.value){
@@ -57,7 +59,7 @@
     });
 
     
-    // 휴대폰번호(번호 4자리 오류)
+    // 휴대폰 중간번호(번호 4자리 오류)
     document.getElementById('uphonemid').addEventListener('blur', function(event){
         const value = this.value,
         elParent = this.parentElement,
@@ -76,7 +78,7 @@
         }
     });
     
-    // 휴대폰번호(번호 4자리 오류)
+    // 휴대폰 마지막번호(번호 4자리 오류)
     document.getElementById('uphonelast').addEventListener('blur', function(event){
         const value = this.value,
               elParent = this.parentElement,
@@ -94,17 +96,14 @@
             parentClassList.remove('success', 'error');
         }
     });
-
+    //주소 검색 및 text에 삽입, focus
     document.querySelector('#btn_find').addEventListener('click',function(event){
         event.preventDefault();
         new daum.Postcode({
             oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-                // 예제를 참고하여 다양한 활용법을 확인해 보세요.
                 let postcode = data.zonecode;
                 let road = data.jibunAddress;
         
-                console.log(postcode+"  "+road);
                 document.getElementById('postcode').value = postcode;
                 document.getElementById('road').value = road;
                 document.getElementById('detail').parentElement.classList.add('error');
@@ -113,7 +112,7 @@
         }).open();
         
     });   
-
+    //상세 주소 css
     document.getElementById('detail').addEventListener('blur', function(event){
         const value = this.value,
               elParent = this.parentElement,
@@ -127,6 +126,7 @@
         }
     });
 
+    //배송지 등록
     document.getElementById('form').addEventListener('submit', function(event) {
         
         // 배송지 shipaddr,수령인 username, 연락처 uphonefirst,uphonemid,uphonelast
@@ -143,28 +143,22 @@
         const defaultYn = document.getElementById('defaultYn').checked? 'Y' : 'N';
         const privacyYn = document.getElementById('privacyYn').checked? 'Y' : 'N';
 
+        //비어있지 않지만 정보를 잘못 입력했을 시 갯수
         let err = document.getElementsByClassName('field error');
         
-        console.log(shipaddr+" "+username+" "+uphonefirst+" "+uphonemid+" "+uphonelast+" "+postcode
-        +" "+road+" "+detail+" "+defaultYn+" "+privacyYn);
-
+        //사용자 정보 입력(유,무 확인)
         if(err.length||!shipaddr||!username||!uphonefirst||!uphonemid||!uphonelast||!postcode||!road||!detail||privacyYn=='N'){
             event.preventDefault();
-            alert("정보를 알맞게 입력하세요.");
+            alert("비어있는 칸이 있습니다. 알맞게 입력하세요.");
             return;
         }
-
-        console.log(shipaddr+" "+username+" "+uphonefirst+" "+uphonemid+" "+uphonelast+" "+postcode
-        +" "+road+" "+detail+" "+defaultYn+" "+privacyYn);
-
-       
+        //로컬스토리지 값의 유무를 통해 배열에 등록
         let arr = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')):[];
-        
+        //배열에 마지막 index찾기        
         if(arr.length){
             num = arr[arr.length-1].index;
-        }
-        console.log(num);
-        
+        } 
+        //배송지 정보 입력
         const ck = {index:++num,
             shipaddr:shipaddr,
             username:username,
@@ -177,18 +171,13 @@
             defaultYn:defaultYn,
             privacyYn:privacyYn
         }
+        //로컬 스토리지에 저장
         arr.push(ck);
         localStorage.setItem('arr',JSON.stringify(arr));
-        console.log(arr);
-
 
         console.log(ck);
-    //     const ck = [document.getElementById('postcode'),
-    //     document.getElementById('username'),
-    //     document.getElementById('uphonefirst')+"-"+document.getElementById('uphonemid')+"-"+document.getElementById('uphonelast'),
-    //     "("+document.getElementById('postcode')+") "+document.getElementById('road')+" "+document.getElementById('detail'),
-    // ]
-
+        //리스트html로 이동
+        location.href='list.html';
     });
 })();
  

@@ -1,11 +1,13 @@
    
 (function() {
     'use strict';
-    console.log(localStorage.getItem('useridx'));
+    //로컬스토리지에서 수정할 유저 index값 가져오기
     let useridx = Number(localStorage.getItem('useridx'));
-
+    //로컬스토리지에서 배열로 받아오기
     let arr = localStorage.getItem('arr') ? JSON.parse(localStorage.getItem('arr')):[];
+    //update할 유저만 가져오기 위한 변수선언
     let updateuser;
+    //update할 index 가져오기 위한 변수선언
     let idxnum;
 
     for(let i=0;i<arr.length;i++){
