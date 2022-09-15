@@ -26,8 +26,10 @@
     document.getElementById('delete').addEventListener('click',function(event){
         const getcks = document.querySelectorAll(`input[class="check"]`);
         let Jarr = JSON.parse(localStorage.getItem('arr'));
-
-        //배열 순번이 꼬이지 않도록 뒤에서 삭제
+        if(!document.querySelectorAll(`input[class="check"]:checked`).length){
+            alert('선택된 항목이 없습니다.');
+        }
+        // 배열 순번이 꼬이지 않도록 뒤에서 삭제
         for(let i = getcks.length-1;i>= 0;i--){
             if(getcks[i].checked==true){
                 Jarr.splice(i,1); 
