@@ -282,7 +282,10 @@ table td button {
   border-color:#dc3545;
   color: #dc3545;
 }
-
+.confirm .rig {
+  border-color:#1eb9be;
+  color: #1eb9be;
+}
 .confirm table ~ button {
   position: absolute;
   top: -25px;
