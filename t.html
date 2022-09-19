@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class se{
+        name;
+        age;
+        
+        constructor(a,b ){
+            this.name = arguments[0];
+            this.age = arguments[1];
+        }
+
+        hi() {
+           console.log("name: "+this.name+" age: "+this.age);
+            
+        }
+    }
+   (function () {
+        'use strict'
+        // document.getElementsByTagName('marquee')[0].addEventListener('change',function(){
+        //    console.log('1');
+        // });
+    let a = new se("박세인",27);
+
+        a.hi();
+    })();
+//    window.onload = console.log(document.getElementsByTagName('marquee'));
+</script>
+<body>
+    <marquee bgcolor="black"><font color="red">배경은 검정색</font></marquee>
+    <marquee width=400 height=50 bgcolor="yellow"><font size="6">가로 400픽셀 세로 50픽셀에 바탕 노랑, 폰트 사이즈는 6</font></marquee>
+</body>
+</html>
