@@ -9,6 +9,7 @@ app.set('views', './views');
 // public 폴더하위의 파일들을 기본으로 서비스
 app.use(express.static('public'));
 
+let num = 0;
 app.get('/randomdog', function(req,res) {
     request("https://random.dog/woof.json", 
     function(error, response, body) {
