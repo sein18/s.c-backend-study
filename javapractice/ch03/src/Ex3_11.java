@@ -4,4 +4,5 @@ class Ex3_11 {
 		double shortPi = Math.round(pi * 1000) / 1000.0;
 		System.out.println(shortPi);
 	}
+	
 }
