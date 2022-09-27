@@ -1,16 +1,45 @@
 package practice;
 
-public class test {
+public class test implements intertest{
 
 	public static void main(String[] args) {
 
 		point p = new point3D(1,2,3);
 		
+		test z = new test();
+	 
+		
 		System.out.println(p);
+		z.abc();
+		System.out.println(z.a);
+		
+		
+	}
+
+	 
+
+	@Override
+	public void abc() {
+		System.out.println("인터페이스 연습");
 	}
 
 }
 
+interface intertest{
+	int a = 1;
+	
+	public void abc();
+	
+}
+
+abstract class abstest{
+	int x = 1;
+	public abstract void a1();
+	
+	public void a2() {
+		int x1 = 2;
+	}
+}
 
 class Parent{
 	int age;
@@ -67,9 +96,15 @@ class point3D extends point{
 	public void setZ(int z) {
 		this.z = z;
 	}
-
- 
-	 
-
-	
 }
+
+
+
+
+
+
+
+
+
+
+

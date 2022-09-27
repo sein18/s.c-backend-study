@@ -1,0 +1,21 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import service.Dto;
+
+public class Controller {
+
+	List<Dto> dto = new ArrayList<Dto>();
+
+	public List<Dto> select() {
+
+		return dto;
+	}
+
+	public List<Dto> insert() {
+
+		return dto;
+	}
+}
