@@ -1,0 +1,13 @@
+
+F
+java:S1220""Move this file to a named package.H¢RMINORZ
+CODE_SMELL
+x	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ãŸ‡H¡RMINORZ
+CODE_SMELL
+l
+java:S1854";Remove this useless assignment to local variable "average".(½’èúùÿÿÿÿH£RMAJORZ
+CODE_SMELL
+i	java:S106"9Replace this use of System.out or System.err by a logger.(ã•—ùÿÿÿÿH¤RMAJORZ
+CODE_SMELL
+d	java:S106"9Replace this use of System.out or System.err by a logger.(±ÖâİH¥RMAJORZ
+CODE_SMELL
