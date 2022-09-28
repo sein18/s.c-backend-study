@@ -1,0 +1,25 @@
+
+p	java:S106"9Replace this use of System.out or System.err by a logger.(“¢Ãÿÿÿÿÿ8ÄİÇï·0H”RMAJORZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(ÕÛA8Á€Íï·0H’RMAJORZ
+CODE_SMELL
+n	java:S125"<This block of commented-out lines of code should be removed.(ì£ ½8®·ÿï·0H‡RMAJORZ
+CODE_SMELL
+p	java:S106+"9Replace this use of System.out or System.err by a logger.(à”¼Øûÿÿÿÿ8†óï·0HŠRMAJORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(èŠà—8ÄİÇï·0HŒRMAJORZ
+CODE_SMELL
+p	java:S106/"9Replace this use of System.out or System.err by a logger.(âûœ˜ıÿÿÿÿ8†óï·0HRMAJORZ
+CODE_SMELL
+p	java:S1061"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ıÑ†ğ·0HRMAJORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(™–ì 8ÄİÇï·0HRMAJORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(äï³­8ÄİÇï·0HRMAJORZ
+CODE_SMELL
+}	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¦ ƒşÿÿÿÿH‘RMINORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(¥ãÈı8Óıİï·0H“RMAJORZ
+CODE_SMELL
+p	java:S106"9Replace this use of System.out or System.err by a logger.(ÏÌ¹¬şÿÿÿÿ8ÄİÇï·0H‹RMAJORZ
+CODE_SMELL

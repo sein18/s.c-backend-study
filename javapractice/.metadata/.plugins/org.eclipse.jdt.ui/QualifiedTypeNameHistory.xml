@@ -3,4 +3,13 @@
     <fullyQualifiedTypeName name="practice.Parent"/>
     <fullyQualifiedTypeName name="practice.point"/>
     <fullyQualifiedTypeName name="practice.point3D"/>
+    <fullyQualifiedTypeName name="practice.abstest"/>
+    <fullyQualifiedTypeName name="practice.test"/>
+    <fullyQualifiedTypeName name="service.Dto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.awt.Container"/>
+    <fullyQualifiedTypeName name="controller.Controller"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,15 @@
+
+public class exc {
+	
+	public static void main(String[] args) {
+		
+		int x[] = new int[10];
+		try {
+			System.out.println(x[10]);
+		} catch (Exception e) {
+			System.out.println("오류잡음");
+		}finally {
+			System.out.println("무조건 출력!");
+		}
+	}
+}

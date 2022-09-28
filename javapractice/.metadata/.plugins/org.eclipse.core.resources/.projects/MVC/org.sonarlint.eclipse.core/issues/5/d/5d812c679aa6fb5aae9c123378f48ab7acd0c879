@@ -1,0 +1,20 @@
+
+p	java:S106"9Replace this use of System.out or System.err by a logger.(îşÄÅüÿÿÿÿ8­¬®ï·0HšRMAJORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(Şª¦¾8¼İ¨ï·0H•RMAJORZ
+CODE_SMELL
+p	java:S106"9Replace this use of System.out or System.err by a logger.(§ñé—øÿÿÿÿ8¢°ï·0H–RMAJORZ
+CODE_SMELL
+a
+java:S5413)")Verify that "remove()" is used correctly.(€—Õ€şÿÿÿÿ8Úï ï·0HRMAJORZ
+CODE_SMELL
+k	java:S106!"9Replace this use of System.out or System.err by a logger.(ÜŞ¢µ8ıºªï·0HœRMAJORZ
+CODE_SMELL
+p	java:S106("9Replace this use of System.out or System.err by a logger.(èÎêùÿÿÿÿ8Úï ï·0H™RMAJORZ
+CODE_SMELL
+Œ
+java:S2293
+"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç¡ÊÚ8›Í‘ï·0H—RMINORZ
+CODE_SMELL
+j	java:S106-"9Replace this use of System.out or System.err by a logger.(Â›†8­¬®ï·0H›RMAJORZ
+CODE_SMELL

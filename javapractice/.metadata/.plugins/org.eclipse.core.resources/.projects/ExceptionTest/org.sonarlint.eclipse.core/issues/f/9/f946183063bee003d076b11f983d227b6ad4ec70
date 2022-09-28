@@ -1,0 +1,16 @@
+
+F
+java:S1220""Move this file to a named package.H¢RMINORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(Á‰Ÿ8¶ÑÛ¸0H¬RMAJORZ
+CODE_SMELL
+p	java:S106
+"9Replace this use of System.out or System.err by a logger.(å×„¥ûÿÿÿÿ8ˆì×¸0H©RMAJORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(”ª¾’8çÆš¸0H°RMAJORZ
+CODE_SMELL
+x	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¥§İH¡RMINORZ
+CODE_SMELL
+\
+java:S1197"*Move the array designators [] to the type.(Ï³‰8çÆš¸0H­RMINORZ
+CODE_SMELL

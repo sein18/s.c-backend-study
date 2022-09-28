@@ -51,4 +51,12 @@ public class view {
 	sc.close();	
 	}
 
+	String test = " CREATE OR REPLACE TRIGGER trg_test "
+			+ " AFTER UPDATE ON emp FOR EACH ROW "
+			+ " DECLARE BEGIN "
+			+ " UPDATE career SET eno = :new.eno where eno = :old.eno; "
+			+ " UPDATE eva SET eno = :new.eno where eno = :old.eno;"
+			+ " UPDATE certi SET eno = :new.eno where eno = :old.eno; "
+			+ "END;/";
+		  
 }
